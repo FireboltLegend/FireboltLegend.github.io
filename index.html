@@ -215,6 +215,107 @@
             box-shadow: 0 8px 30px rgba(100, 200, 255, 0.6);
         }
 
+        .publication {
+            background: rgba(100, 200, 255, 0.05);
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid rgba(168, 85, 247, 0.5);
+            margin-bottom: 25px;
+            transition: all 0.3s;
+        }
+
+        .publication:hover {
+            background: rgba(100, 200, 255, 0.08);
+            border-left-color: #a855f7;
+            transform: translateX(5px);
+        }
+
+        .publication h3 {
+            color: #64c8ff;
+            margin-bottom: 8px;
+            font-size: 1.3em;
+        }
+
+        .publication .authors {
+            color: #b0b0b0;
+            margin-bottom: 5px;
+            font-size: 0.95em;
+        }
+
+        .publication .venue {
+            color: #a855f7;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .bibtex-btn {
+            background: linear-gradient(135deg, rgba(100, 200, 255, 0.2), rgba(168, 85, 247, 0.2));
+            border: 2px solid rgba(100, 200, 255, 0.4);
+            color: #64c8ff;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .bibtex-btn:hover {
+            background: linear-gradient(135deg, rgba(100, 200, 255, 0.3), rgba(168, 85, 247, 0.3));
+            border-color: #64c8ff;
+            transform: translateY(-2px);
+        }
+
+        .bibtex-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .bibtex-container.active {
+            max-height: 500px;
+        }
+
+        .bibtex-code {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(100, 200, 255, 0.2);
+            position: relative;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85em;
+            color: #b0b0b0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(100, 200, 255, 0.3);
+            border: 1px solid rgba(100, 200, 255, 0.5);
+            color: #64c8ff;
+            padding: 5px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.8em;
+            transition: all 0.2s;
+        }
+
+        .copy-btn:hover {
+            background: rgba(100, 200, 255, 0.5);
+            transform: scale(1.05);
+        }
+
+        .copy-btn.copied {
+            background: rgba(34, 197, 94, 0.5);
+            border-color: rgba(34, 197, 94, 0.7);
+            color: #86efac;
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -249,7 +350,8 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>I’m a Computer Science Student at the University of Texas at Dallas (UTD) and an Undergraduate Research Assistant in the UTD Multimodal Interaction (MI) Lab. I am an aspiring PhD Student and have strong experience in Game Development through my Research in Virtual Reality (VR) and Video Game Projects.</p>
+            <p>I'm a researcher specializing in virtual reality and haptic technologies, exploring the intersection of immersive experiences and tactile feedback systems. My work focuses on creating more intuitive and realistic human-computer interactions through advanced haptic interfaces and VR applications.</p>
+            <p>With expertise spanning hardware development, software engineering, and human-centered design, I'm passionate about pushing the boundaries of what's possible in immersive technology.</p>
         </section>
 
         <section id="research">
@@ -289,23 +391,95 @@
 
         <section id="publications">
             <h2>Publications</h2>
-            <p><strong>Your Name</strong>, et al. (2024). "Enhanced Haptic Rendering Techniques for Virtual Surgery Training." <em>IEEE Transactions on Haptics</em>.</p>
-            <p><strong>Your Name</strong>, et al. (2023). "Cross-Modal Perception in Immersive Environments: A Comparative Study." <em>ACM CHI Conference Proceedings</em>.</p>
-            <p>Co-Author (2023). "Real-Time Force Feedback Optimization in VR Applications." <em>VR/AR Conference</em>.</p>
+            
+            <div class="publication">
+                <h3>UltraEdit: In-Situ Design Environment for Ultrasound Haptization</h3>
+                <p class="authors">Richard Huynh Noeske, Ayush Bhardwaj, Abbas Khawaja, Jin Ryong Kim</p>
+                <p class="venue">Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology (UIST '25)</p>
+                <button class="bibtex-btn" onclick="toggleBibtex(this)">Show BibTeX</button>
+                <div class="bibtex-container">
+                    <div class="bibtex-code">
+                        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>@inproceedings{10.1145/3746059.3747775,
+author = {Noeske, Richard Huynh and Bhardwaj, Ayush and Khawaja, Abbas and Kim, Jin Ryong},
+title = {UltraEdit: In-Situ Design Environment for Ultrasound Haptization},
+year = {2025},
+isbn = {9798400720376},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3746059.3747775},
+doi = {10.1145/3746059.3747775},
+abstract = {We present UltraEdit, an in-situ design environment that enables users to directly edit ultrasound haptic sensations in VR using barehand interactions. UltraEdit represents haptic sensations as tangible objects, called blobs, which users can modify or apply to 3D objects through intuitive hand gestures. Users can create, edit, copy, and apply blobs, allowing them to work with multiple haptic sensations to design virtual objects with diverse tactile feedback. Additionally, UltraEdit allows users to create spatial and temporal haptic patterns using time blobs and spatial drawing features. Users can draw custom-shaped haptic patterns directly on their hands, adapting to comprehensive design scenarios. To evaluate UltraEdit, we conducted an exploratory user study assessing its usability, effectiveness, and ease of learning. We also compared its performance to an existing desktop-based haptic editing tool. Participants found UltraEdit intuitive to learn, enjoyable to use, and effective for adding haptic feedback to virtual objects.},
+booktitle = {Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology},
+articleno = {164},
+numpages = {18},
+keywords = {Immersive authoring tool, Mid-air haptics, Ultrasound haptic display, 3D user interface},
+location = {},
+series = {UIST '25}
+}</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <h3>Virtual Streamer with Conversational and Tactile Interaction</h3>
+                <p class="authors">Vaishnavi Josyula, Sowresh Mecheri-Senthil, Abbas Khawaja, Jose M. Garcia, Ayush Bhardwaj, Ashish Pratap, Jin Ryong Kim</p>
+                <p class="venue">2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)</p>
+                <button class="bibtex-btn" onclick="toggleBibtex(this)">Show BibTeX</button>
+                <div class="bibtex-container">
+                    <div class="bibtex-code">
+                        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>@INPROCEEDINGS{10536248,
+  author={Josyula, Vaishnavi and Mecheri-Senthil, Sowresh and Khawaja, Abbas and Garcia, Jose M. and Bhardwaj, Ayush and Pratap, Ashish and Kim, Jin Ryong},
+  booktitle={2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)}, 
+  title={Virtual Streamer with Conversational and Tactile Interaction}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1072-1073},
+  abstract={This paper introduces an approach to an interactive virtual streamer that provides conversational and tactile interactions, offering insights into levels of immersion and personalization for the user. User interaction is categorized into various types, such as the spatial nature of the virtual streamer's stream, along with conversational and tactile interactions with the streamer. We deploy the virtual streamer in a VR environment and conclude the efficiency of user interactions with the virtual streamer via a scenario-based assessment.},
+  keywords={Solid modeling;Three-dimensional displays;Conferences;Avatars;Prototypes;Immersive experience;User interfaces;Virtual Streamer;Haptic Interaction;Conversational Interaction;Avatar Interaction;Large Language Models},
+  doi={10.1109/VRW62533.2024.00332},
+  ISSN={},
+  month={March},
+}</div>
+                </div>
+            </div>
+
+            <div class="publication">
+                <h3>Demonstrating Virtual Streamer with Conversational and Tactile Interaction</h3>
+                <p class="authors">Vaishnavi Josyula, Jose M. Garcia, Sowresh Mecheri-Senthil, Ayush Bhardwaj, Jin Ryong Kim, Abbas Khawaja, Ashish Pratap</p>
+                <p class="venue">2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)</p>
+                <button class="bibtex-btn" onclick="toggleBibtex(this)">Show BibTeX</button>
+                <div class="bibtex-container">
+                    <div class="bibtex-code">
+                        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>@INPROCEEDINGS{10536542,
+  author={Josyula, Vaishnavi and Garcia, Jose M. and Mecheri-Senthil, Sowresh and Bhardwaj, Ayush and Kim, Jin Ryong and Khawaja, Abbas and Pratap, Ashish},
+  booktitle={2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)}, 
+  title={Demonstrating Virtual Streamer with Conversational and Tactile Interaction}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1202-1203},
+  abstract={This paper introduces an approach to an interactive virtual streamer that provides conversational and tactile interactions, demonstrating insights into levels of immersion and personalization for the user. User interaction is categorized into various types, such as the spatial nature of the virtual streamer's stream, along with conversational and tactile interactions with the streamer. We demonstrate the virtual streamer in VR and conclude the efficiency of user interactions with the virtual streamer via a scenario-based assessment.},
+  keywords={Three-dimensional displays;Conferences;Virtual reality;User interfaces;Virtual Human;Haptic Interaction;Conversational Interaction;Avatar Interaction},
+  doi={10.1109/VRW62533.2024.00395},
+  ISSN={},
+  month={March},
+}</div>
+                </div>
+            </div>
         </section>
 
         <section id="skills">
             <h2>Technical Skills</h2>
             <div class="skills-container">
                 <span class="skill-badge">Unity & Unreal Engine</span>
-                <span class="skill-badge">C++ / C#</span>
+                <span class="skill-badge">C/C++/C#</span>
                 <span class="skill-badge">Python</span>
-                <span class="skill-badge">Haptic Hardware</span>
-                <span class="skill-badge">Motion Tracking</span>
-                <span class="skill-badge">3D Modeling</span>
-                <span class="skill-badge">User Research</span>
-                <span class="skill-badge">OpenGL/WebGL</span>
-                <span class="skill-badge">Signal Processing</span>
+                <span class="skill-badge">Haptics</span>
+                <span class="skill-badge">Virtual Reality</span>
+                <span class="skill-badge">3D Modeling/Printing</span>
+                <span class="skill-badge">UX/UI Design</span>
+                <span class="skill-badge">Computer Animation</span>
+                <span class="skill-badge">HTTP/TCP/UDP Communication</span>
             </div>
         </section>
 
@@ -313,9 +487,9 @@
             <h2>Get In Touch</h2>
             <p style="text-align: center; margin-bottom: 20px;">Interested in collaboration or want to learn more about my research? Feel free to reach out!</p>
             <div class="contact-links">
-                <a href="mailto:your.email@example.com" class="contact-btn">Email</a>
-                <a href="https://linkedin.com/in/yourprofile" class="contact-btn">LinkedIn</a>
-                <a href="https://github.com/yourusername" class="contact-btn">GitHub</a>
+                <a href="mailto:abbas.khawaja@gmail.com" class="contact-btn">Email</a>
+                <a href="https://linkedin.com/in/abbas-khawaja" class="contact-btn">LinkedIn</a>
+                <a href="https://github.com/FireboltLegend" class="contact-btn">GitHub</a>
             </div>
         </section>
 
@@ -323,5 +497,29 @@
             <p>&copy; 2025 Your Name. All rights reserved.</p>
         </footer>
     </div>
+
+    <script>
+        function toggleBibtex(btn) {
+            const container = btn.nextElementSibling;
+            container.classList.toggle('active');
+            btn.textContent = container.classList.contains('active') ? 'Hide BibTeX' : 'Show BibTeX';
+        }
+
+        function copyBibtex(btn) {
+            const codeBlock = btn.parentElement;
+            const text = codeBlock.textContent.replace('Copy', '').trim();
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = btn.textContent;
+                btn.textContent = 'Copied!';
+                btn.classList.add('copied');
+                
+                setTimeout(() => {
+                    btn.textContent = originalText;
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
