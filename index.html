@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #2d1b3d 100%);
+            background: linear-gradient(135deg, #0a0e27 0%, #0d3a2e 25%, #1a1f3a 50%, #2d1b3d 75%, #1a0d2e 100%);
             color: #e0e0e0;
             line-height: 1.6;
             overflow-x: hidden;
@@ -50,7 +50,7 @@
         h1 {
             font-size: 3.5em;
             margin-bottom: 10px;
-            background: linear-gradient(135deg, #64c8ff, #a855f7, #ec4899);
+            background: linear-gradient(135deg, #64c8ff, #14b8a6, #a855f7, #ec4899);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -121,8 +121,33 @@
             content: '';
             width: 6px;
             height: 40px;
-            background: linear-gradient(135deg, #64c8ff, #a855f7);
+            background: linear-gradient(135deg, #14b8a6, #64c8ff, #a855f7);
             border-radius: 3px;
+        }
+
+        .pakistan-accent {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(270deg, #01411C 70%, #F7FCFF 30%);
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(20, 184, 166, 0.4);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .pakistan-accent::before {
+            content: '☪';
+            font-size: 24px;
+            color: #F7FCFF;
+            text-align: center;
+            position: absolute;
+            top: 8px;
+            left: 62.5%;
+            transform: translateX(-50%);
         }
 
         .project-grid {
@@ -186,8 +211,8 @@
         }
 
         .skill-badge:hover {
-            background: linear-gradient(135deg, rgba(100, 200, 255, 0.2), rgba(168, 85, 247, 0.2));
-            border-color: #64c8ff;
+            background: linear-gradient(135deg, rgba(100, 200, 255, 0.2), rgba(20, 184, 166, 0.2));
+            border-color: #14b8a6;
             transform: translateY(-3px);
         }
 
@@ -201,18 +226,18 @@
 
         .contact-btn {
             padding: 15px 35px;
-            background: linear-gradient(135deg, #64c8ff, #a855f7);
+            background: linear-gradient(135deg, #14b8a6, #64c8ff, #a855f7);
             color: white;
             text-decoration: none;
             border-radius: 30px;
             font-weight: bold;
             transition: all 0.3s;
-            box-shadow: 0 5px 20px rgba(100, 200, 255, 0.4);
+            box-shadow: 0 5px 20px rgba(20, 184, 166, 0.4);
         }
 
         .contact-btn:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 30px rgba(100, 200, 255, 0.6);
+            box-shadow: 0 8px 30px rgba(20, 184, 166, 0.6);
         }
 
         .publication {
@@ -247,6 +272,40 @@
             font-style: italic;
             margin-bottom: 15px;
         }
+
+        .publication-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .pub-link {
+            background: linear-gradient(135deg, rgba(100, 200, 255, 0.15), rgba(168, 85, 247, 0.15));
+            border: 2px solid rgba(100, 200, 255, 0.3);
+            color: #64c8ff;
+            padding: 6px 16px;
+            border-radius: 18px;
+            text-decoration: none;
+            font-size: 0.85em;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .pub-link:hover {
+            background: linear-gradient(135deg, rgba(100, 200, 255, 0.25), rgba(168, 85, 247, 0.25));
+            border-color: #64c8ff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(100, 200, 255, 0.3);
+        }
+        .pub-link.doi { border-color: rgba(236, 72, 153, 0.4); color: #ec4899; }
+        .pub-link.doi:hover { border-color: #ec4899; }
+        
+        .pub-link.project { border-color: rgba(168, 85, 247, 0.4); color: #a855f7; }
+        .pub-link.project:hover { border-color: #a855f7; }
+        .pub-link.pdf { border-color: rgba(34, 197, 94, 0.4); color: #86efac; }
+        .pub-link.pdf:hover { border-color: #86efac; }
 
         .bibtex-btn {
             background: linear-gradient(135deg, rgba(100, 200, 255, 0.2), rgba(168, 85, 247, 0.2));
@@ -316,6 +375,29 @@
             color: #86efac;
         }
 
+        .video-container {
+            margin-top: 15px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(100, 200, 255, 0.2);
+        }
+
+        .profile-pic {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(100, 200, 255, 0.5);
+            box-shadow: 0 0 25px rgba(100, 200, 255, 0.3);
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 35px rgba(100, 200, 255, 0.5);
+        }
+
         footer {
             text-align: center;
             padding: 40px 20px;
@@ -334,9 +416,11 @@
 </head>
 <body>
     <div class="grid-bg"></div>
+    <div class="pakistan-accent"></div>
     
     <div class="container">
         <header>
+            <img src="AbbasProfilePic.jpg" alt="Abbas Khawaja Profile Picture" class="profile-pic">
             <h1>Abbas Khawaja</h1>
             <p class="subtitle">VR & Haptics Researcher</p>
             <nav>
@@ -350,43 +434,7 @@
 
         <section id="about">
             <h2>About Me</h2>
-            <p>I'm a researcher specializing in virtual reality and haptic technologies, exploring the intersection of immersive experiences and tactile feedback systems. My work focuses on creating more intuitive and realistic human-computer interactions through advanced haptic interfaces and VR applications.</p>
-            <p>With expertise spanning hardware development, software engineering, and human-centered design, I'm passionate about pushing the boundaries of what's possible in immersive technology.</p>
-        </section>
-
-        <section id="research">
-            <h2>Research Projects</h2>
-            <div class="project-grid">
-                <div class="project-card">
-                    <h3>Advanced Haptic Feedback System</h3>
-                    <p>Developed a novel haptic feedback mechanism for surgical training simulations, improving tactile fidelity by 40% compared to existing systems.</p>
-                    <div>
-                        <span class="tech-tag">C++</span>
-                        <span class="tech-tag">Unity</span>
-                        <span class="tech-tag">Arduino</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h3>VR Rehabilitation Platform</h3>
-                    <p>Created an immersive VR environment for physical therapy, integrating real-time motion tracking and gamified exercises to improve patient engagement.</p>
-                    <div>
-                        <span class="tech-tag">Unreal Engine</span>
-                        <span class="tech-tag">Motion Capture</span>
-                        <span class="tech-tag">Python</span>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Multi-Modal Interaction Study</h3>
-                    <p>Conducted user studies examining the impact of combined visual, auditory, and haptic feedback on spatial presence and task performance in VR.</p>
-                    <div>
-                        <span class="tech-tag">User Research</span>
-                        <span class="tech-tag">Data Analysis</span>
-                        <span class="tech-tag">R</span>
-                    </div>
-                </div>
-            </div>
+            <p>I’m a Computer Science Student at the University of Texas at Dallas (UTD) and an Undergraduate Research Assistant in the UTD <a href="https://mi-lab.io/">Multimodal Interaction (MI) Lab</a>. I am an aspiring PhD Student and have strong experience in Game Development through my Research in Virtual Reality (VR) and Video Game Projects.</p>
         </section>
 
         <section id="publications">
@@ -394,12 +442,18 @@
             
             <div class="publication">
                 <h3>UltraEdit: In-Situ Design Environment for Ultrasound Haptization</h3>
-                <p class="authors">Richard Huynh Noeske, Ayush Bhardwaj, Abbas Khawaja, Jin Ryong Kim</p>
+                <p class="authors">Richard Huynh Noeske, Ayush Bhardwaj, <b>Abbas Khawaja</b>, Jin Ryong Kim</p>
                 <p class="venue">Proceedings of the 38th Annual ACM Symposium on User Interface Software and Technology (UIST '25)</p>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1145/3746059.3747775" class="pub-link doi" target="_blank">
+                        <span>🔗</span> DOI
+                    </a>
+                </div>
                 <button class="bibtex-btn" onclick="toggleBibtex(this)">Show BibTeX</button>
                 <div class="bibtex-container">
                     <div class="bibtex-code">
-                        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>@inproceedings{10.1145/3746059.3747775,
+                        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>
+@inproceedings{10.1145/3746059.3747775,
 author = {Noeske, Richard Huynh and Bhardwaj, Ayush and Khawaja, Abbas and Kim, Jin Ryong},
 title = {UltraEdit: In-Situ Design Environment for Ultrasound Haptization},
 year = {2025},
@@ -421,12 +475,18 @@ series = {UIST '25}
 
             <div class="publication">
                 <h3>Virtual Streamer with Conversational and Tactile Interaction</h3>
-                <p class="authors">Vaishnavi Josyula, Sowresh Mecheri-Senthil, Abbas Khawaja, Jose M. Garcia, Ayush Bhardwaj, Ashish Pratap, Jin Ryong Kim</p>
+                <p class="authors">Vaishnavi Josyula, Sowresh Mecheri-Senthil, <b>Abbas Khawaja</b>, Jose M. Garcia, Ayush Bhardwaj, Ashish Pratap, Jin Ryong Kim</p>
                 <p class="venue">2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)</p>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1109/VRW62533.2024.00332" class="pub-link doi" target="_blank">
+                        <span>🔗</span> DOI
+                    </a>
+                </div>
                 <button class="bibtex-btn" onclick="toggleBibtex(this)">Show BibTeX</button>
                 <div class="bibtex-container">
                     <div class="bibtex-code">
-                        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>@INPROCEEDINGS{10536248,
+                        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>
+@INPROCEEDINGS{10536248,
   author={Josyula, Vaishnavi and Mecheri-Senthil, Sowresh and Khawaja, Abbas and Garcia, Jose M. and Bhardwaj, Ayush and Pratap, Ashish and Kim, Jin Ryong},
   booktitle={2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)}, 
   title={Virtual Streamer with Conversational and Tactile Interaction}, 
@@ -445,12 +505,18 @@ series = {UIST '25}
 
             <div class="publication">
                 <h3>Demonstrating Virtual Streamer with Conversational and Tactile Interaction</h3>
-                <p class="authors">Vaishnavi Josyula, Jose M. Garcia, Sowresh Mecheri-Senthil, Ayush Bhardwaj, Jin Ryong Kim, Abbas Khawaja, Ashish Pratap</p>
+                <p class="authors">Vaishnavi Josyula, Sowresh Mecheri-Senthil, <b>Abbas Khawaja</b>, Jose M. Garcia, Ayush Bhardwaj, Ashish Pratap, Jin Ryong Kim</p>
                 <p class="venue">2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)</p>
+                <div class="publication-links">
+                    <a href="https://doi.org/10.1109/VRW62533.2024.00395" class="pub-link doi" target="_blank">
+                        <span>🔗</span> DOI
+                    </a>
+                </div>
                 <button class="bibtex-btn" onclick="toggleBibtex(this)">Show BibTeX</button>
                 <div class="bibtex-container">
                     <div class="bibtex-code">
-                        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>@INPROCEEDINGS{10536542,
+                        <button class="copy-btn" onclick="copyBibtex(this)">Copy</button>
+@INPROCEEDINGS{10536542,
   author={Josyula, Vaishnavi and Garcia, Jose M. and Mecheri-Senthil, Sowresh and Bhardwaj, Ayush and Kim, Jin Ryong and Khawaja, Abbas and Pratap, Ashish},
   booktitle={2024 IEEE Conference on Virtual Reality and 3D User Interfaces Abstracts and Workshops (VRW)}, 
   title={Demonstrating Virtual Streamer with Conversational and Tactile Interaction}, 
@@ -464,6 +530,81 @@ series = {UIST '25}
   ISSN={},
   month={March},
 }</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="research">
+            <h2>Research Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>UltraEdit</h3>
+                    <p>Developed an in-situ design environment for ultrasound haptization, enabling real-time feedback and adjustments during the design process.</p>
+                    <div class="video-container">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/0f57QJo3-Zw" 
+                            title="UltraEdit Project Video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <span class="tech-tag">Haptic Editing Tool</span>
+                        <span class="tech-tag">Ultrasound Haptics</span>
+                        <span class="tech-tag">Interaction Design</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Latency Sensitivity</h3>
+                    <p>Investigated the sensitivity of latency in haptic feedback, focusing on increased latency tolerance with multimodal haptics.</p>
+                    <div>
+                        <span class="tech-tag">Virtual Reality</span>
+                        <span class="tech-tag">Multimodal Haptics</span>
+                        <span class="tech-tag">Network Latency</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>VR-Dialogues</h3>
+                    <p>Developed an immersive VR conversational system that generates realistic, dynamic interactions between a user and two virtual agents.</p>
+                    <div class="video-container">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/-5LwEqT_XU0"
+                            title="VR Dialogues Project Video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <span class="tech-tag">Virtual Reality</span>
+                        <span class="tech-tag">Human-AI Interaction</span>
+                        <span class="tech-tag">Prompt Engineering</span>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Virtual Streamer</h3>
+                    <p>Developed a VR environment where users can interact with a full-body virtual agent using haptic feedback and voice commands.</p>
+                    <div class="video-container">
+                        <iframe width="100%" height="200" src="https://www.youtube.com/embed/RLnOVrxDAzI"
+                            title="Virtual Streamer Project Video" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <span class="tech-tag">Virtual Reality</span>
+                        <span class="tech-tag">Vibrotactile Haptics</span>
+                        <span class="tech-tag">Human-AI Interaction</span>
+                        <span class="tech-tag">Prompt Engineering</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>AR Voice Captions</h3>
+                    <p>Developed an AR application for the MagicLeap 2 that provides real-time captions for users through speech bubbles next to the speaker's face.</p>
+                    <div>
+                        <span class="tech-tag">Augmented Reality</span>
+                        <span class="tech-tag">Speech Recognition/Diarization</span>
+                        <span class="tech-tag">Accessibility</span>
+                        <span class="tech-tag">HTTP Communication</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -485,11 +626,11 @@ series = {UIST '25}
 
         <section id="contact">
             <h2>Get In Touch</h2>
-            <p style="text-align: center; margin-bottom: 20px;">Interested in collaboration or want to learn more about my research? Feel free to reach out!</p>
+            <p style="text-align: center; margin-bottom: 20px;">Want to learn more about my research? Feel free to reach out!</p>
             <div class="contact-links">
-                <a href="mailto:abbas.khawaja@gmail.com" class="contact-btn">Email</a>
-                <a href="https://linkedin.com/in/abbas-khawaja" class="contact-btn">LinkedIn</a>
-                <a href="https://github.com/FireboltLegend" class="contact-btn">GitHub</a>
+                <a href="mailto:abbas.khawaja@gmail.com" class="contact-btn" target="_blank">Email</a>
+                <a href="https://linkedin.com/in/abbas-khawaja" class="contact-btn" target="_blank">LinkedIn</a>
+                <a href="https://github.com/FireboltLegend" class="contact-btn" target="_blank">GitHub</a>
             </div>
         </section>
 
