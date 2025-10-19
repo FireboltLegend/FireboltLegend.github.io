@@ -9,7 +9,7 @@ This website showcases my research, publications, and projects in **Virtual Real
 
 ## 🚀 Live Site
 
-🔗 **Visit my website:** [abbaskhawaja.github.io](https://abbaskhawaja.github.io)
+🔗 **Visit my website:** [fireboltlegend.github.io](https://fireboltlegend.github.io)
 
 ---
 
