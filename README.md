@@ -44,8 +44,26 @@ The website is built with **pure HTML, CSS, and JavaScript**, ensuring fast load
 ---
 
 ## 📂 Project Structure
-📁 abbas-khawaja-website/
-│
+📁 FireboltLegend.github.io/
+
+|
+
 ├── index.html            # Main HTML file (the entire site)
+
 ├── AbbasProfilePic.jpg   # Profile picture
+
 └── README.md             # Project documentation
+
+---
+
+## 👋 Contact
+
+If you'd like to connect or collaborate:
+
+📧 Email: abbas.khawaja@gmail.com
+
+💼 LinkedIn: [linkedin.com/in/abbas-khawaja](linkedin.com/in/abbas-khawaja)
+
+💻 GitHub: [FireboltLegend](https://github.com/FireboltLegend)
+
+⭐ Designed and developed by Abbas Khawaja — VR & Haptics Researcher at the University of Texas at Dallas.
