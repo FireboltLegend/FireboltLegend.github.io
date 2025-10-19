@@ -3,8 +3,6 @@
 Welcome to the source code for my **personal website**, hosted on **GitHub Pages**!  
 This website showcases my research, publications, and projects in **Virtual Reality (VR)** and **Haptics**, along with my academic background and contact information.
 
-![Website Preview](AbbasProfilePic.jpg)
-
 ---
 
 ## 🚀 Live Site
