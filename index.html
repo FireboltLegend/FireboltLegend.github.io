@@ -55,6 +55,8 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             animation: glow 3s ease-in-out infinite;
+            line-height: 1.3;
+            padding-bottom: 10px;
         }
 
         @keyframes glow {
@@ -125,29 +127,37 @@
             border-radius: 3px;
         }
 
-        .pakistan-accent {
+        .flag-container {
             position: fixed;
             top: 20px;
             right: 20px;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(270deg, #01411C 70%, #F7FCFF 30%);
-            border-radius: 50%;
-            box-shadow: 0 0 30px rgba(20, 184, 166, 0.4);
-            z-index: 100;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            gap: 10px;
+            z-index: 100;
         }
-        .pakistan-accent::before {
-            content: '☪';
-            font-size: 24px;
-            color: #F7FCFF;
-            text-align: center;
-            position: absolute;
-            top: 8px;
-            left: 62.5%;
-            transform: translateX(-50%);
+
+        .flag {
+            width: 60px;
+            height: 40px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 5px;
+            box-shadow: 0 0 15px rgba(100, 200, 255, 0.4);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .flag:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(100, 200, 255, 0.7);
+        }
+
+        .flag-pakistan {
+            background-image: url('FlagofPakistan.png');
+        }
+
+        .flag-usa {
+            background-image: url('FlagofAmerica.png');
         }
 
         .project-grid {
@@ -418,10 +428,14 @@
             .project-grid { grid-template-columns: 1fr; }
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="grid-bg"></div>
-    <div class="pakistan-accent"></div>
+    <div class="flag-container">
+        <div class="flag flag-pakistan" id="flag-pakistan" title="Urdu"></div>
+        <div class="flag flag-usa" id="flag-usa" title="English"></div>
+    </div>
     
     <div class="container">
         <header>
@@ -435,6 +449,13 @@
                 <a href="#skills">Skills</a>
                 <a href="#contact">Contact</a>
             </nav>
+            <div style="margin-top: 20px;">
+                <button id="toggle-lang" 
+                    style="padding: 10px 20px; border-radius: 20px; border: none; cursor: pointer;
+                    background: linear-gradient(135deg, #64c8ff, #14b8a6); color: white; font-weight: bold;">
+                    🇺🇸 English / 🇵🇰 اردو
+                </button>
+            </div>
         </header>
 
         <section id="about">
@@ -666,6 +687,73 @@ series = {UIST '25}
                 }, 2000);
             });
         }
+
+        const urduTexts = {
+            "Abbas Khawaja": "عباس خواجہ",
+            "About": "میرے بارے میں",
+            "About Me": "میرے بارے میں",
+            "I’m a Computer Science Student at the University of Texas at Dallas (UTD) and an Undergraduate Research Assistant in the UTD Multimodal Interaction (MI) Lab. I am an aspiring PhD Student and have strong experience in Game Development through my Research in Virtual Reality (VR) and Video Game Projects.": "میں یونیورسٹی آف ٹیکساس ایٹ ڈلاس (یو ٹی ڈی) میں کمپیوٹر سائنس کا طالب علم ہوں اور یو ٹی ڈی ملٹی موڈل انٹریکشن (ایم آئی) لیب میں انڈرگریجویٹ ریسرچ اسسٹنٹ ہوں۔ میں ایک ابھرتا ہوا پی ایچ ڈی طالب علم ہوں اور ورچوئل ریئلٹی (وی آر) اور ویڈیو گیم پروجیکٹس میں اپنی تحقیق کے ذریعے گیم ڈیولپمنٹ میں مضبوط تجربہ رکھتا ہوں۔",
+            "Publications": "تحقیقات",
+            "Research": "تحقیق",
+            "Research Projects": "تحقیقی منصوبے",
+            "Developed an in-situ design environment for ultrasound haptization, enabling real-time feedback and adjustments during the design process.": "الٹراساؤنڈ ہیپٹائزیشن کے لیے ایک ان سائٹ ڈیزائن ماحول تیار کیا، جو ڈیزائن کے عمل کے دوران حقیقی وقت کی فیڈ بیک اور ایڈجسٹمنٹ کو ممکن بناتا ہے۔",
+            "Investigated the sensitivity of latency in haptic feedback, focusing on increased latency tolerance with multimodal haptics.": "ہیپٹک فیڈ بیک میں لیٹنسی کی حساسیت کی تحقیق کی، خاص طور پر ملٹی موڈل ہیپٹکس کے ساتھ بڑھتی ہوئی لیٹنسی برداشت پر توجہ دی۔",
+            "Developed an immersive VR conversational system that generates realistic, dynamic interactions between a user and two virtual agents.": "ایک جامع وی آر مکالماتی نظام تیار کیا جو صارف اور دو ورچوئل ایجنٹس کے درمیان حقیقت پسندانہ، متحرک تعاملات پیدا کرتا ہے۔",
+            "Developed a VR environment where users can interact with a full-body virtual agent using haptic feedback and voice commands.": "ایک وی آر ماحول تیار کیا جہاں صارفین ہیپٹک فیڈ بیک اور وائس کمانڈز کا استعمال کرتے ہوئے ایک مکمل جسمانی ورچوئل ایجنٹ کے ساتھ بات چیت کر سکتے ہیں۔",
+            "Developed an AR application for the MagicLeap 2 that provides real-time captions for users through speech bubbles next to the speaker's face.": "میجک لیپ 2 کے لیے ایک اے آر ایپلیکیشن تیار کی جو اسپیکر کے چہرے کے ساتھ تقریری بلبلوں کے ذریعے صارفین کو حقیقی وقت کی کیپشنز فراہم کرتی ہے۔",
+            "Skills": "مہارتیں",
+            "Technical Skills": "تکنیکی مہارتیں",
+            "Haptics": "ہیپٹکس",
+            "Virtual Reality": "ورچوئل ریئلٹی",
+            "Human-AI Interaction": "انسان-اے آئی تعامل",
+            "Prompt Engineering": "پرومپٹ انجینئرنگ",
+            "Multimodal Haptics": "ملٹی موڈل ہیپٹکس",
+            "Network Latency": "نیٹ ورک لیٹنسی",
+            "Augmented Reality": "اگمینٹڈ ریئلٹی",
+            "Ultrasound Haptics": "الٹراساؤنڈ ہیپٹکس",
+            "Haptic Editing Tool": "ہیپٹک ایڈیٹنگ ٹول",
+            "Accessibility": "رسائی",
+            "Interaction Design": "انٹریکشن ڈیزائن",
+            "Speech Recognition/Diarization": "تقریر کی شناخت/ڈائریائزیشن",
+            "HTTP/TCP/UDP Communication": "HTTP/TCP/UDP مواصلات",
+            "HTTP Communication": "HTTP مواصلات",
+            "UX/UI Design": "یو ایکس/یو آئی ڈیزائن",
+            "3D Modeling/Printing": "3D ماڈلنگ/پرنٹنگ",
+            "Computer Animation": "کمپیوٹر اینیمیشن",
+            "Unity & Unreal Engine": "یونٹی اور انریل انجن",
+            "C/C++/C#": "C/C++/C#",
+            "Python": "پائتھن",
+            "Vibrotactile Haptics": "وائبروٹیکٹائل ہیپٹکس",
+            "Contact": "رابطہ کریں",
+            "Get In Touch": "رابطہ کریں",
+            "VR & Haptics Researcher": "وی آر اور ہیپٹکس محقق",
+            "Want to learn more about my research? Feel free to reach out!":
+            "کیا آپ میری تحقیق کے بارے میں مزید جاننا چاہتے ہیں؟ بلا جھجک رابطہ کریں!",
+            "&copy; 2025 Abbas Khawaja. All rights reserved.": " 2025 عباس خواجہ۔ جملہ حقوق محفوظ ہیں۔",
+            "🇺🇸 English / اردو": "🇺🇸 انگریزی / اردو"
+        };
+
+        let isUrdu = false;
+
+        document.getElementById("toggle-lang").addEventListener("click", () => {
+            isUrdu = !isUrdu;
+            document.documentElement.lang = isUrdu ? "ur" : "en";
+            document.body.dir = isUrdu ? "rtl" : "ltr";
+            document.body.style.fontFamily = isUrdu
+            ? "'Noto Nastaliq Urdu', serif"
+            : "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+            document.querySelector("h1").style.lineHeight = isUrdu ? "1.5" : "1.3";
+            document.querySelector("h1").style.paddingBottom = isUrdu ? "15px" : "10px";
+
+            document.querySelectorAll("h1, h2, p, a, span, button, .subtitle").forEach(el => {
+            const text = el.textContent.trim();
+            if (isUrdu && urduTexts[text]) el.textContent = urduTexts[text];
+            else if (!isUrdu) {
+                const eng = Object.keys(urduTexts).find(k => urduTexts[k] === text);
+                if (eng) el.textContent = eng;
+            }
+            });
+        });
     </script>
 </body>
 </html>
