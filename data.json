@@ -142,25 +142,21 @@
       ]
     },
     {
-      "id": "pub1777044380323",
-      "title": "SensoryBlox: Plug-and-Feel Modular Multi-Sensory User Interface for Immersive Cardboard VR",
+      "id": "pub1777044952196",
+      "title": "New Publication",
       "title_ur": "",
-      "authors": "Hyunjae Gil, Abbas Khawaja, Ben Cressman, Andrew Gerungan, Jin Ryong Kim",
+      "authors": "",
       "authors_ur": "",
-      "venue": "Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems (CHI '26)",
+      "venue": "",
       "venue_ur": "",
       "year": 2026,
-      "doi": "http://doi.org/10.1145/3772318.3791596",
+      "doi": "",
       "pdf": "",
       "project": "",
-      "abstract": "We present SensoryBlox, a modular, multi-sensory user interface designed for integration with cardboard-based virtual reality (VR) head-mounted displays (HMDs). SensoryBlox features interchangeable sensory modules—vibration, temperature, wind, and olfactory—that enable users to assemble customized multi-sensory configurations tailored to diverse VR contexts. The system includes in-VR interfaces for module scanning, spatial tracking, and real-time customization of feedback patterns. To inform SensoryBlox design, we conducted three user studies. The initial study explored application scenarios and associated sensory modalities to identify design requirements for a modular multi-sensory VR system. Based on these findings, we developed the hardware modules and in-VR software interfaces. In the second study, we evaluated the usability and interaction experience of SensoryBlox across all functionalities. Finally, a comparison study examined the impact of multi-sensory feedback on user experience. Our findings demonstrate the potential of a modular multi-sensory system in enriching immersion and engaging interactions within low-cost VR environments.",
+      "abstract": "",
       "abstract_ur": "",
-      "bibtex": "@inproceedings{10.1145/3772318.3791596,\nauthor = {Gil, Hyunjae and Khawaja, Abbas and Cressman, Ben and Gerungan, Andrew and Kim, Jin Ryong},\ntitle = {SensoryBlox: Plug-and-Feel Modular Multi-Sensory User Interface for Immersive Cardboard VR},\nyear = {2026},\nisbn = {9798400722783},\npublisher = {Association for Computing Machinery},\naddress = {New York, NY, USA},\nurl = {https://doi.org/10.1145/3772318.3791596},\ndoi = {10.1145/3772318.3791596},\nabstract = {We present SensoryBlox, a modular, multi-sensory user interface designed for integration with cardboard-based virtual reality (VR) head-mounted displays (HMDs). SensoryBlox features interchangeable sensory modules—vibration, temperature, wind, and olfactory—that enable users to assemble customized multi-sensory configurations tailored to diverse VR contexts. The system includes in-VR interfaces for module scanning, spatial tracking, and real-time customization of feedback patterns. To inform SensoryBlox design, we conducted three user studies. The initial study explored application scenarios and associated sensory modalities to identify design requirements for a modular multi-sensory VR system. Based on these findings, we developed the hardware modules and in-VR software interfaces. In the second study, we evaluated the usability and interaction experience of SensoryBlox across all functionalities. Finally, a comparison study examined the impact of multi-sensory feedback on user experience. Our findings demonstrate the potential of a modular multi-sensory system in enriching immersion and engaging interactions within low-cost VR environments.},\nbooktitle = {Proceedings of the 2026 CHI Conference on Human Factors in Computing Systems},\narticleno = {571},\nnumpages = {24},\nkeywords = {Modular interface, Multi-sensory, Customization, Virtual reality, Cardboard VR HMDs},\nlocation = {\n},\nseries = {CHI '26}\n}",
-      "tags": [
-        "Haptic devices",
-        "User inter-face toolkits",
-        "Virtual reality"
-      ]
+      "bibtex": "",
+      "tags": []
     }
   ],
   "projects": [
